@@ -1,0 +1,192 @@
+[centos@ip-172-31-31-215 ~]$ touch f1
+[centos@ip-172-31-31-215 ~]$ ls
+f1
+[centos@ip-172-31-31-215 ~]$ ll
+total 0
+-rw-rw-r--. 1 centos centos 0 Jun 12 16:26 f1
+[centos@ip-172-31-31-215 ~]$ echo hi likki >> f1
+[centos@ip-172-31-31-215 ~]$ ll
+total 4
+-rw-rw-r--. 1 centos centos 9 Jun 12 16:30 f1
+[centos@ip-172-31-31-215 ~]$ cat f1
+hi likki
+[centos@ip-172-31-31-215 ~]$ echo hello >> f2
+[centos@ip-172-31-31-215 ~]$ cat f2
+hello
+[centos@ip-172-31-31-215 ~]$ cat f2 >> f4
+[centos@ip-172-31-31-215 ~]$ f4
+-bash: f4: command not found
+[centos@ip-172-31-31-215 ~]$ cat f4
+hello
+[centos@ip-172-31-31-215 ~]$ cat >> f5
+hi
+how r u
+^C
+[centos@ip-172-31-31-215 ~]$ cat f5
+hi
+how r u
+[centos@ip-172-31-31-215 ~]$ ll
+total 16
+-rw-rw-r--. 1 centos centos  9 Jun 12 16:30 f1
+-rw-rw-r--. 1 centos centos  6 Jun 12 16:33 f2
+-rw-rw-r--. 1 centos centos  6 Jun 12 16:36 f4
+-rw-rw-r--. 1 centos centos 11 Jun 12 16:41 f5
+[centos@ip-172-31-31-215 ~]$ vi f6
+[centos@ip-172-31-31-215 ~]$ ll
+total 20
+-rw-rw-r--. 1 centos centos  9 Jun 12 16:30 f1
+-rw-rw-r--. 1 centos centos  6 Jun 12 16:33 f2
+-rw-rw-r--. 1 centos centos  6 Jun 12 16:36 f4
+-rw-rw-r--. 1 centos centos 11 Jun 12 16:41 f5
+-rw-rw-r--. 1 centos centos 21 Jun 12 16:43 f6
+[centos@ip-172-31-31-215 ~]$ vi f7
+[centos@ip-172-31-31-215 ~]$ cat f7
+hi
+hello
+hi hi
+hello hello
+hi hello
+hi likki
+hello likki
+i am likki
+my name is likki
+1
+2
+3
+
+[centos@ip-172-31-31-215 ~]$ head f7
+hi
+hello
+hi hi
+hello hello
+hi hello
+hi likki
+hello likki
+i am likki
+my name is likki
+1
+[centos@ip-172-31-31-215 ~]$ head -3 f7
+hi
+hello
+hi hi
+[centos@ip-172-31-31-215 ~]$ tail
+^C
+[centos@ip-172-31-31-215 ~]$ tail -3 f7
+2
+3
+
+[centos@ip-172-31-31-215 ~]$ tail f7
+hello hello
+hi hello
+hi likki
+hello likki
+i am likki
+my name is likki
+1
+2
+3
+
+[centos@ip-172-31-31-215 ~]$ grep hi f7
+hi
+hi hi
+hi hello
+hi likki
+[centos@ip-172-31-31-215 ~]$ grep likki f7
+hi likki
+hello likki
+i am likki
+my name is likki
+[centos@ip-172-31-31-215 ~]$ echo how r u >> f7
+[centos@ip-172-31-31-215 ~]$ cat f7
+hi
+hello
+hi hi
+hello hello
+hi hello
+hi likki
+hello likki
+i am likki
+my name is likki
+1
+2
+3
+
+how r u
+[centos@ip-172-31-31-215 ~]$ grep -i f7
+^C
+[centos@ip-172-31-31-215 ~]$ grep -i
+Usage: grep [OPTION]... PATTERN [FILE]...
+Try 'grep --help' for more information.
+[centos@ip-172-31-31-215 ~]$ grep -i likki f7
+hi likki
+hello likki
+i am likki
+my name is likki
+[centos@ip-172-31-31-215 ~]$ vi f7
+[centos@ip-172-31-31-215 ~]$ grep likki f7
+hi likki
+hello likki
+i am likki
+[centos@ip-172-31-31-215 ~]$ cat f7
+hi
+hello
+hi hi
+hello hello
+hi hello
+hi likki
+hello likki
+i am likki
+my name is Likki
+1
+2
+3
+how r u
+[centos@ip-172-31-31-215 ~]$ grep likki f7
+hi likki
+hello likki
+i am likki
+[centos@ip-172-31-31-215 ~]$ grep -i likki f7
+hi likki
+hello likki
+i am likki
+my name is Likki
+
+ 1  sudo -i
+    2  vi f7
+    3  cat f7
+    4  sed 's/likki/g' f7
+    5  sed 's/likki/sai/g' f7
+    6  sed -i 's/likki/sai/g' f7
+    7  cat f7
+    8  sed -i 's/sai/likki/g' f7
+    9  cat f7
+   10  ls
+   11  clear
+   12  ln -s f7 f8
+   13  ll
+   14  cat f7
+   15  cat f8
+   16  vi f7
+   17  cat f8
+   18  echo how are you LikkI >> f7
+   19  cat f7
+   20  grep -i likki f7
+   21  sed 's/likki/sai/g' f7
+   22  sed -i 's/sai/likki/g' f7
+   23  cat f7
+   24  sed -i 's/likki/sai/g' f7
+   25  cat f7
+   26  sed 's/sai/likki/g' f7
+   27  sed 's/likki/sai/g' f7
+   28  sed -i 's/likki/sai/g' f7
+   29  cat f7
+   30  sed -i 's/sai/likki/g' f7
+   31  cat f7
+   32  ls
+   33  ll
+   34  vi f7
+   35  cat f7
+   36  cat f8
+   37  history >> day3
+   38  history
+
